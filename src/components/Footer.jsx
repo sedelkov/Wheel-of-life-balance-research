@@ -8,25 +8,25 @@ const Footer = () => {
     {
       title: 'Научные статьи',
       items: [
-        { name: 'Coupe et al. (2018) - Self-management interventions', url: '#' },
-        { name: 'Nießen et al. (2023) - Aspiration-attainment gaps', url: '#' },
-        { name: 'Scherer (2022) - Learned helplessness', url: '#' }
+        { name: 'Schaffler et al. (2018) - Self-management interventions', url: 'https://pubmed.ncbi.nlm.nih.gov/29427178/' },
+        { name: 'Nießen et al. (2023) - Aspiration-attainment gaps', url: 'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287064' },
+        { name: 'Coupe et al. (2018) - Lifestyle interventions', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC6076398/' }
+      ]
+    },
+    {
+      title: 'Исследование',
+      items: [
+        { name: 'GitHub репозиторий', url: 'https://github.com/sedelkov/Wheel-of-life-balance-research' },
+        { name: 'Полный отчет исследования', url: 'https://github.com/sedelkov/Wheel-of-life-balance-research/blob/main/comprehensive_report.md' },
+        { name: 'Методология анализа', url: 'https://github.com/sedelkov/Wheel-of-life-balance-research#methodology' }
       ]
     },
     {
       title: 'Альтернативные подходы',
       items: [
-        { name: 'Strength-Based Practice', url: '#' },
-        { name: 'Trauma-Informed Coaching', url: '#' },
-        { name: 'Systemic Coaching Methods', url: '#' }
-      ]
-    },
-    {
-      title: 'Организации',
-      items: [
-        { name: 'International Coach Federation', url: '#' },
-        { name: 'Association for Applied Psychology', url: '#' },
-        { name: 'Social Justice Coaching Collective', url: '#' }
+        { name: 'Strength-Based Practice', url: 'https://www.strengthsbasedpractice.net/' },
+        { name: 'Trauma-Informed Coaching', url: 'https://traumainformedcoaching.com/' },
+        { name: 'Systemic Coaching Methods', url: 'https://systemiccoaching.org/' }
       ]
     }
   ]
@@ -53,11 +53,21 @@ const Footer = () => {
               инклюзивных подходов в индустрии личностного развития и коучинга.
             </p>
             <div className="flex space-x-3">
-              <Button variant="outline" size="sm" className="text-white border-gray-600 hover:bg-gray-800">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="text-white border-gray-600 hover:bg-gray-800"
+                onClick={() => window.open('https://github.com/sedelkov/Wheel-of-life-balance-research', '_blank')}
+              >
                 <Github size={16} className="mr-2" />
                 GitHub
               </Button>
-              <Button variant="outline" size="sm" className="text-white border-gray-600 hover:bg-gray-800">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="text-white border-gray-600 hover:bg-gray-800"
+                onClick={() => window.open('https://github.com/sedelkov/Wheel-of-life-balance-research/issues', '_blank')}
+              >
                 <Mail size={16} className="mr-2" />
                 Контакт
               </Button>

@@ -309,7 +309,7 @@ const ConclusionSection = () => {
                 <Button 
                   variant="outline"
                   size="lg"
-                  onClick={() => window.open('https://github.com', '_blank')}
+                  onClick={() => window.open('https://github.com/sedelkov/Wheel-of-life-balance-research', '_blank')}
                 >
                   Поделиться исследованием
                 </Button>
