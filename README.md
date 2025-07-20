@@ -68,8 +68,8 @@
 
 1. **Клонируйте репозиторий**
    ```bash
-   git clone https://github.com/your-username/wheel-of-life-analysis.git
-   cd wheel-of-life-analysis
+   git clone https://github.com/sedelkov/Wheel-of-life-balance-research.git
+   cd Wheel-of-life-balance-research
    ```
 
 2. **Установите зависимости**
@@ -205,7 +205,17 @@ wheel-of-life-analysis/
 
 ## 📞 Контакты
 
-Если у вас есть вопросы или предложения по проекту, пожалуйста, создайте issue в этом репозитории.
+**GitHub репозиторий:** [https://github.com/sedelkov/Wheel-of-life-balance-research](https://github.com/sedelkov/Wheel-of-life-balance-research)
+
+**Полный отчет исследования:** [comprehensive_report.md](https://github.com/sedelkov/Wheel-of-life-balance-research/blob/main/comprehensive_report.md)
+
+Если у вас есть вопросы или предложения по проекту, пожалуйста, создайте issue в GitHub репозитории.
+
+## 🔗 Связанные ресурсы
+
+- **Исходные данные исследования:** [research_findings.md](https://github.com/sedelkov/Wheel-of-life-balance-research/blob/main/research_findings.md)
+- **Дополнительные исследования:** [additional_research.md](https://github.com/sedelkov/Wheel-of-life-balance-research/blob/main/additional_research.md)
+- **Методология:** [README.md](https://github.com/sedelkov/Wheel-of-life-balance-research#methodology)
 
 ---
 
