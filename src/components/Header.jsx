@@ -1,25 +1,31 @@
 import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { Menu, X, ChevronUp } from 'lucide-react'
 
 const Header = () => {
+  const { t, i18n } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showBackToTop, setShowBackToTop] = useState(false)
 
   const sections = [
-    { id: 'hero', label: 'Главная' },
-    { id: 'what-is-wheel', label: 'Что такое Колесо' },
-    { id: 'problem', label: 'Проблема' },
-    { id: 'empirical-data', label: 'Данные' },
-    { id: 'gap-framing', label: 'Gap Framing' },
-    { id: 'learned-helplessness', label: 'Беспомощность' },
-    { id: 'social-context', label: 'Социальный контекст' },
-    { id: 'alternatives', label: 'Альтернативы' },
-    { id: 'recommendations', label: 'Рекомендации' },
-    { id: 'conclusion', label: 'Заключение' }
+    { id: 'hero', label: t('nav_main') },
+    { id: 'what-is-wheel', label: t('nav_what_is_wheel') },
+    { id: 'problem', label: t('nav_problem') },
+    { id: 'empirical-data', label: t('nav_data') },
+    { id: 'gap-framing', label: t('nav_gap_framing') },
+    { id: 'learned-helplessness', label: t('nav_helplessness') },
+    { id: 'social-context', label: t('nav_social_context') },
+    { id: 'alternatives', label: t('nav_alternatives') },
+    { id: 'recommendations', label: t('nav_recommendations') },
+    { id: 'conclusion', label: t('nav_conclusion') }
   ]
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +58,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-16 w-full">
             <div className="flex items-center space-x-4 flex-shrink-0">
               <h1 className="text-lg sm:text-xl font-bold text-primary truncate">
-                Колесо баланса: Анализ
+                {t('header_title')}
               </h1>
             </div>
 
@@ -69,7 +75,7 @@ const Header = () => {
               ))}
               <div className="relative group">
                 <button className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap">
-                  Еще
+                  {t('nav_more')}
                 </button>
                 <div className="absolute top-full right-0 mt-2 w-48 bg-popover border rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   {sections.slice(5).map((section) => (
@@ -83,17 +89,25 @@ const Header = () => {
                   ))}
                 </div>
               </div>
+              <Button onClick={() => changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')} variant="outline" size="sm">
+                {i18n.language === 'ru' ? 'EN' : 'RU'}
+              </Button>
             </nav>
 
             {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden flex-shrink-0 p-2"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </Button>
+            <div className="flex items-center lg:hidden">
+              <Button onClick={() => changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')} variant="outline" size="sm" className="mr-2">
+                {i18n.language === 'ru' ? 'EN' : 'RU'}
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="lg:hidden flex-shrink-0 p-2"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </Button>
+            </div>
           </div>
 
           {/* Progress Bar */}

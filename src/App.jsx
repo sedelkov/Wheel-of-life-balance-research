@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
@@ -12,15 +12,24 @@ import AlternativeApproachesSection from './components/AlternativeApproachesSect
 import RecommendationsSection from './components/RecommendationsSection'
 import ConclusionSection from './components/ConclusionSection'
 import Footer from './components/Footer'
+import QuizModal from './components/QuizModal'
 import './App.css'
 
 function App() {
+  const [isQuizModalOpen, setQuizModalOpen] = useState(true);
+  const [quizResult, setQuizResult] = useState(null);
+
+  const handleQuizSubmit = (answers) => {
+    setQuizResult(answers);
+    setQuizModalOpen(false);
+  };
+
   return (
     <Router>
       <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
         <Header />
         <main>
-          <HeroSection />
+          <HeroSection quizResult={quizResult} />
           <WhatIsWheelSection />
           <ProblemSection />
           <EmpiricalDataSection />
@@ -32,6 +41,11 @@ function App() {
           <ConclusionSection />
         </main>
         <Footer />
+        <QuizModal
+          isOpen={isQuizModalOpen}
+          onClose={() => setQuizModalOpen(false)}
+          onSubmit={handleQuizSubmit}
+        />
       </div>
     </Router>
   )
